@@ -122,3 +122,16 @@ body {
 .newsletter-container__button:hover {
   cursor: pointer;
 }
+
+.footer-container {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.footer-container__icon {
+  width: 35px;
+  height: auto;
+}
