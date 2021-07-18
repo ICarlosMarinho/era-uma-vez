@@ -35,7 +35,35 @@
       </nav>
     </header>
     <main class="main-content">
-      <section class="banner-container"></section>
+      <section class="banner-container"><!-- the images will be placed here from script --></section>
+      <section class="newsletter-container">
+        <h2>Cadastre-se em nossa <i>newsletter</i></h2>
+        <form class="newsletter-form" spellcheck="false">
+          <label for="full-name">
+            Nome
+            <input 
+            class="newsletter-container__input"
+            type="text" 
+            name="full-name" 
+            id="full-name" 
+            placeholder="Ex. Joana Maria da Silva" 
+            required
+            >
+          </label>         
+          <label for="email">
+            Email
+            <input 
+            class="newsletter-container__input"
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="Ex. joanamsilva@email.com" 
+            required
+            >
+          </label>         
+          <button class="newsletter-container__button" type="submit">Enviar</button>       
+        </form>
+      </section>
     </main>
   </div>
   <script src="./js/script.js"></script>
