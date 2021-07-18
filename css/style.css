@@ -6,7 +6,18 @@ body {
   scroll-behavior: smooth;
 }
 
+.root {
+  display: grid;
+  grid-template: "header"
+                 "main"
+                 "footer";
+  grid-template-rows: 70px repeat(3, auto) 70px;
+  grid-template-columns: 100%;
+  gap: 30px;
+}
+
 .header {
+  grid-area: header;
   background-color: #000;
   position: fixed;
   box-sizing: border-box;
@@ -42,4 +53,20 @@ body {
   transition-property: all;
   transition-timing-function: ease-out;
   transition-duration: 0.1s;
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container__img {
+  width: 95%;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
 }
