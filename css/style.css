@@ -6,7 +6,18 @@ body {
   scroll-behavior: smooth;
 }
 
+.root {
+  display: grid;
+  grid-template: "header"
+                 "main"
+                 "footer";
+  grid-template-rows: 70px auto 70px;
+  grid-template-columns: 100%;
+  row-gap: 30px;
+}
+
 .header {
+  grid-area: header;
   background-color: #000;
   position: fixed;
   box-sizing: border-box;
@@ -16,6 +27,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  z-index: 1;
 }
 
 .header__logo {
@@ -42,4 +54,84 @@ body {
   transition-property: all;
   transition-timing-function: ease-out;
   transition-duration: 0.1s;
+}
+
+.main-content {
+  grid-area: main;
+  display: grid;
+  grid-template: "banner-container"
+                 "home-products"
+                 "newsletter-form";
+  grid-template-columns: 100%;
+  grid-template-rows: min-content repeat(2, auto);
+  row-gap: 15px;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  grid-area: banner-container;
+  min-height: 350px;
+}
+
+.banner-container__img {
+  width: 95%;
+  height: auto;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
+}
+
+.newsletter-container {
+  grid-area: newsletter-form;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+}
+
+.newsletter-form {
+  
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 40%;
+}
+
+.newsletter-container__input {
+  border: none;
+  border-bottom: #000 1px solid;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.newsletter-container__button {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #000;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.newsletter-container__button:hover {
+  cursor: pointer;
+}
+
+.footer-container {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.footer-container__icon {
+  width: 35px;
+  height: auto;
 }

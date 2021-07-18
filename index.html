@@ -12,26 +12,79 @@
   <title>Era Uma Vez!</title>
 </head>
 <body>
-  <header class="header">
-    <a class="header__link" href="#" >
-      <img class="header__logo" src="./assets/logo.png" alt="Logotipo da página, está escrito 'Era uma vez!'" >
-    </a>
-    <nav>
-      <ul class="nav-bar">
-        <li class="nav-bar__item">
-          <a class="header__link header__text" href="#" aria-label="Ir para a página inicial">Home</a>
-        </li>
-        <li class="nav-bar__item">
-          <a class="header__link header__text" href="#" aria-label="Ir para as categorias">Categorias</a>
-        </li>
-        <li class="nav-bar__item">
-          <a class="header__link header__text" href="#" aria-label="Ir para o carrinho">Carrinho</a>
-        </li>
-        <li class="nav-bar__item">
-          <a class="header__link header__text" href="#" aria-label="Ir para a página de login">Login</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <div class="root">
+    <header class="header">
+      <a class="header__link" href="/" >
+        <img class="header__logo" src="./assets/logo.png" alt="Logotipo da página, está escrito 'Era uma vez!'" >
+      </a>
+      <nav>
+        <ul class="nav-bar">
+          <li class="nav-bar__item">
+            <a class="header__link header__text" href="#" aria-label="Ir para a página inicial">Home</a>
+          </li>
+          <li class="nav-bar__item">
+            <a class="header__link header__text" href="#" aria-label="Ir para as categorias">Categorias</a>
+          </li>
+          <li class="nav-bar__item">
+            <a class="header__link header__text" href="#" aria-label="Ir para o carrinho">Carrinho</a>
+          </li>
+          <li class="nav-bar__item">
+            <a class="header__link header__text" href="#" aria-label="Ir para a página de login">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <section class="banner-container"><!-- the images will be placed here from script --></section>
+      <section class="newsletter-container">
+        <h2>Cadastre-se em nossa <i>newsletter</i></h2>
+        <form class="newsletter-form" spellcheck="false">
+          <label for="full-name">
+            Nome
+            <input 
+            class="newsletter-container__input"
+            type="text" 
+            name="full-name" 
+            id="full-name" 
+            placeholder="Ex. Joana Maria da Silva" 
+            required
+            >
+          </label>         
+          <label for="email">
+            Email
+            <input 
+            class="newsletter-container__input"
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="Ex. joanamsilva@email.com" 
+            required
+            >
+          </label>         
+          <button class="newsletter-container__button" type="submit">Enviar</button>       
+        </form>
+      </section>
+    </main>
+    <footer class="footer-container">
+      <span>Carlos Marinho</span>
+      <div>
+        <a href="https://github.com/ICarlosMarinho" target="_blank" rel="noreferrer">
+          <img 
+          class="footer-container__icon" 
+          src="./assets/github-icon.png" 
+          alt="Ir para o perfil de Carlos Marinho no Github"
+          >
+        </a>
+        <a href="https://twitter.com/CarlosMarinh0o" target="_blank" rel="noreferrer">
+          <img 
+          class="footer-container__icon" 
+          src="./assets/twitter-icon.png" 
+          alt="Ir para o perfil de Carlos Marinho no Twitter"
+          >
+        </a>
+      </div>
+    </footer>
+  </div>
+  <script src="./js/script.js"></script>
 </body>
 </html>
