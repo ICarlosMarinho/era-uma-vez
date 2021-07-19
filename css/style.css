@@ -196,7 +196,9 @@ body {
   .nav-bar {
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     row-gap: 20px;
+    padding: 15px;
   }
 
   .newsletter-form {
