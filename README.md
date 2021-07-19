@@ -2,7 +2,7 @@
 # Era uma vez!
 
 Landing page de uma loja online de livros fictícia, feita para o desafio *Hiring Coders*.
-Para rodar o projeto localmente você pode clonar o projeto e utilizar a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para VSCode. Ou você pode visualizar o resultado no *deploy*.
+Para rodar o projeto localmente você pode clonar o projeto e utilizar a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para VSCode. Ou você pode visualizar o resultado no [*deploy*](https://era-uma-vez-icarlosmarinho.vercel.app/).
 
 ## *Assets*
 
