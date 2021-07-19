@@ -1,46 +1,64 @@
 window.onload = () => {
 
   setFormListener();
-  putBannerImg("../assets/blackfriday-banner.png", "Ir para as promoções da Blackfriday", "#");
-  changeBannerImg();
+  putBanner();
   putProducts();
 }
 
-function putBannerImg(path, alt, href) {
+function putBanner() {
 
   const bannerContainer = document.querySelector(".banner-container");
+  const bannerImgElArray = [];
+  const imgArray = [
+    { 
+      src: "../assets/blackfriday-banner.png", 
+      alt: "Ir para as promoções da blackfiday", 
+      display: "block",
+      id: "blackfriday-banner"
+    },
+    { 
+      src: "../assets/comics-banner.png", 
+      alt: "Ir para as promoções de quadrinhos com até 60% de desconto", 
+      display: "none",
+      id: "comics-banner"
+    },
+  ]
 
-  bannerContainer.innerHTML = `
-  <a class="banner-container__link" href="${href}">
-    <img 
-      class="banner-container__img"
-      src="${path}" 
-      alt="${alt}"
-    >
-  </a>
-  `;
+  for (const { src, alt, display, id } of imgArray) {
+    
+    const imgEl = `
+    <a id="${id}" class="banner-container__link" href="#" style="display: ${display}">
+      <img 
+        class="banner-container__img"
+        src="${src}" 
+        alt="${alt}"
+      >
+    </a>
+    `;
+
+    bannerImgElArray.push(imgEl);
+  }
+
+  bannerContainer.innerHTML = bannerImgElArray.join("");
+
+  changeBannerImg(imgArray);
 }
 
-function changeBannerImg() {
+function changeBannerImg(imgArray) {
 
   let counter = 0;
-  const imgArray = [
-    { path: "../assets/blackfriday-banner.png", alt: "Ir para as promoções da Blackfriday", href: "#" },
-    { path: "../assets/comics-banner.png", alt: "Ir para a seção de quadrinhos com até 60% de desconto", href: "#" }
-  ]
 
   setInterval(() => {
 
-    const currentImgEl = document.querySelector(".banner-container__img");
-
     counter++;
-    currentImgEl.style.opacity = 0;
 
-    setTimeout(() => {
-      const index = counter % imgArray.length;
+    const index = counter % imgArray.length;
+    const currentBannerEl = document.querySelector(`#${imgArray[index].id}`);
 
-      putBannerImg(imgArray[index].path, imgArray[index].alt, imgArray[index].href);
-    }, 1000);
+    if (index > 0) document.querySelector(`#${imgArray[index - 1].id}`).style.display = "none";
+    else document.querySelector(`#${imgArray[imgArray.length - 1].id}`).style.display = "none";
+
+    currentBannerEl.style.display = "block";
 
   }, 5000);
 }
@@ -78,7 +96,7 @@ function putProducts() {
     productsElArray.push(productElement);
   }
 
-  productsContainer.innerHTML = productsElArray;
+  productsContainer.innerHTML = productsElArray.join("");
 }
 
 function setFormListener() {

@@ -14,6 +14,7 @@ body {
   grid-template-rows: 70px auto 70px;
   grid-template-columns: 100%;
   row-gap: 30px;
+  min-width: 300px;
 }
 
 .header {
@@ -62,7 +63,7 @@ body {
                  "home-products"
                  "newsletter-form";
   grid-template-columns: 100%;
-  grid-template-rows: 450px auto auto;
+  grid-template-rows: min-content auto auto;
   row-gap: 90px;
 }
 
@@ -75,6 +76,7 @@ body {
 
 .banner-container__link {
   max-width: 95%;
+  text-decoration: none;
 }
 
 .banner-container__img {
@@ -180,12 +182,11 @@ body {
 @media screen and (max-width: 645px) {
 
   .root {
-    grid-template-rows: fit-content auto 70px;
+    grid-template-rows: 170px auto 70px;
   }
 
   .main-content {
-    grid-template-rows: 250px auto auto;
-    row-gap: 30px;
+    row-gap: 15px;
   }
   
   .header {
